@@ -318,7 +318,7 @@ if(!class_exists('Vidsoe_Contact_Form_7')){
             if('wpcf7_contact_form' !== $post->post_type){
                 return $delete;
             }
-            return false;
+            return $post;
         }
 
     	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -329,14 +329,14 @@ if(!class_exists('Vidsoe_Contact_Form_7')){
 
     	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        public function prevent_accidental_delete(){
-            v()->one('pre_delete_post', [$this, 'pre_delete_post'], 10, 3);
+        public function prevent_autop(){
+            v()->one('wpcf7_autop_or_not', [$this, 'wpcf7_autop_or_not']);
         }
 
     	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        public function prevent_autop(){
-            v()->one('wpcf7_autop_or_not', [$this, 'wpcf7_autop_or_not']);
+        public function prevent_delete(){
+            v()->one('pre_delete_post', [$this, 'pre_delete_post'], 10, 3);
         }
 
     	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -553,8 +553,8 @@ if(!class_exists('Vidsoe_Contact_Form_7')){
         //
         // fix_ip_addr
         // fix_posted_data
-        // prevent_accidental_delete
         // prevent_autop
+        // prevent_delete
         // support_country_code
         // support_data_options
         // support_logged_in_users
