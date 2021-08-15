@@ -455,19 +455,19 @@ if(!class_exists('Vidsoe_Contact_Form_7')){
 
     	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        public function support_data_option(){
+        public function support_data_options(){
             v()->one('wpcf7_form_tag_data_option', [$this, 'wpcf7_form_tag_data_option'], 10, 3);
         }
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        public function support_logged_in_user(){
+        public function support_logged_in_users(){
             v()->one('wpcf7_verify_nonce', 'is_user_logged_in');
         }
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        public function support_shortcode(){
+        public function support_shortcodes(){
             v()->one('wpcf7_form_elements', 'do_shortcode');
         }
 
@@ -556,9 +556,9 @@ if(!class_exists('Vidsoe_Contact_Form_7')){
         // prevent_accidental_delete
         // prevent_autop
         // support_country_code
-        // support_data_option
-        // support_logged_in_user
-        // support_shortcode
+        // support_data_options
+        // support_logged_in_users
+        // support_shortcodes
         //
     	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
